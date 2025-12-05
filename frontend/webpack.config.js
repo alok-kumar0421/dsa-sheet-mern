@@ -1,12 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");   // ← Added
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "/"                               // Important for SPA routing
   },
   devServer: {
     historyApiFallback: true,
@@ -23,7 +24,6 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       }
-      
     ]
   },
   resolve: {
@@ -32,6 +32,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html"
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "public/_redirects", to: "" }      // ← This copie
+      ]
     })
   ]
 };
