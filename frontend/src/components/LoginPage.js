@@ -18,6 +18,7 @@ const LoginPage = ({ onSubmit, user }) => {
   };
 
   return (
+  <div className="login-wrapper">   {/* <-- ye add karo */}
     <div className="login-card">
       <h2>{isRegister ? "Register (Student)" : "Login (Student)"}</h2>
 
@@ -60,7 +61,8 @@ const LoginPage = ({ onSubmit, user }) => {
         {isRegister ? "Already have account? Login" : "New user? Register"}
       </button>
     </div>
-  );
+  </div>
+);
 };
 
 export default LoginPage;

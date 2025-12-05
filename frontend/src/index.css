@@ -236,3 +236,11 @@ progress::-webkit-progress-value {
   from { opacity: 0; transform: translateY(10px);}
   to   { opacity: 1; transform: translateY(0);}
 }
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
