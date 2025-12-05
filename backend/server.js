@@ -8,15 +8,21 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
 app.use(express.json());
+
+// 🚀 Allow frontend (Render domain + Localhost)
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://dsa-sheet-mern-frontend.onrender.com"   // <-- Add frontend render domain
+    ],
+    methods: "GET,POST,PUT,DELETE",
     credentials: true
   })
 );
 
+// Default Route
 app.get("/", (req, res) => {
   res.send("API running");
 });
@@ -48,78 +54,69 @@ const seedProblems = async () => {
         articleUrl: "https://takeuforward.org/data-structure/kadanes-algorithm/",
         level: "Medium"
       },
+
+      // 🟦 Strings
       {
-        chapter: "Linked List",
-        title: "Reverse Linked List",
-        description: "Reverse a singly linked list.",
-        youtubeUrl: "https://www.youtube.com/results?search_query=reverse+linked+list",
-        leetCodeUrl: "https://leetcode.com/problems/reverse-linked-list/",
-        articleUrl: "https://takeuforward.org/data-structure/reverse-a-linked-list/",
+        chapter: "Strings",
+        title: "Longest Common Prefix",
+        description: "Find common prefix among array of strings.",
+        youtubeUrl: "https://youtu.be/0sWShKIJoo4",
+        leetCodeUrl: "https://leetcode.com/problems/longest-common-prefix/",
+        articleUrl: "https://takeuforward.org/data-structure/longest-common-prefix/",
         level: "Easy"
       },
-      // 🟦 Strings
-{
-  chapter: "Strings",
-  title: "Longest Common Prefix",
-  description: "Find common prefix among array of strings.",
-  youtubeUrl: "https://youtu.be/0sWShKIJoo4",
-  leetCodeUrl: "https://leetcode.com/problems/longest-common-prefix/",
-  articleUrl: "https://takeuforward.org/data-structure/longest-common-prefix/",
-  level: "Easy"
-},
-{
-  chapter: "Strings",
-  title: "Valid Anagram",
-  description: "Check if two strings are anagram.",
-  youtubeUrl: "https://youtu.be/9UtInBqnCgA",
-  leetCodeUrl: "https://leetcode.com/problems/valid-anagram/",
-  articleUrl: "https://takeuforward.org/data-structure/check-if-two-strings-are-anagram/",
-  level: "Easy"
-},
+      {
+        chapter: "Strings",
+        title: "Valid Anagram",
+        description: "Check if two strings are anagram.",
+        youtubeUrl: "https://youtu.be/9UtInBqnCgA",
+        leetCodeUrl: "https://leetcode.com/problems/valid-anagram/",
+        articleUrl: "https://takeuforward.org/data-structure/check-if-two-strings-are-anagram/",
+        level: "Easy"
+      },
 
-// 🟦 Stack & Queue
-{
-  chapter: "Stack & Queue",
-  title: "Valid Parenthesis",
-  description: "Use stack to check valid parentheses.",
-  youtubeUrl: "https://youtu.be/WTzjTskDFMg",
-  leetCodeUrl: "https://leetcode.com/problems/valid-parentheses/",
-  articleUrl: "https://takeuforward.org/data-structure/valid-parentheses/",
-  level: "Easy"
-},
-{
-  chapter: "Stack & Queue",
-  title: "Min Stack",
-  description: "Stack supporting getMin in O(1).",
-  youtubeUrl: "https://youtu.be/qkLl7nAwDPo",
-  leetCodeUrl: "https://leetcode.com/problems/min-stack/",
-  articleUrl: "https://takeuforward.org/data-structure/min-stack/",
-  level: "Medium"
-},
+      // 🟦 Stack & Queue
+      {
+        chapter: "Stack & Queue",
+        title: "Valid Parenthesis",
+        description: "Use stack to check valid parentheses.",
+        youtubeUrl: "https://youtu.be/WTzjTskDFMg",
+        leetCodeUrl: "https://leetcode.com/problems/valid-parentheses/",
+        articleUrl: "https://takeuforward.org/data-structure/valid-parentheses/",
+        level: "Easy"
+      },
+      {
+        chapter: "Stack & Queue",
+        title: "Min Stack",
+        description: "Stack supporting getMin in O(1).",
+        youtubeUrl: "https://youtu.be/qkLl7nAwDPo",
+        leetCodeUrl: "https://leetcode.com/problems/min-stack/",
+        articleUrl: "https://takeuforward.org/data-structure/min-stack/",
+        level: "Medium"
+      },
 
-// 🟦 Trees
-{
-  chapter: "Trees",
-  title: "Binary Tree Level Order Traversal",
-  description: "BFS traversal by levels.",
-  youtubeUrl: "https://youtu.be/EoAsWbO7sqg",
-  leetCodeUrl: "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-  articleUrl: "https://takeuforward.org/data-structure/level-order-traversal/",
-  level: "Easy"
-},
+      // 🟦 Trees
+      {
+        chapter: "Trees",
+        title: "Binary Tree Level Order Traversal",
+        description: "BFS traversal by levels.",
+        youtubeUrl: "https://youtu.be/EoAsWbO7sqg",
+        leetCodeUrl: "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+        articleUrl: "https://takeuforward.org/data-structure/level-order-traversal/",
+        level: "Easy"
+      },
 
-// 🟦 Graph
-{
-  chapter: "Graph",
-  title: "DFS Traversal",
-  description: "Graph depth-first traversal.",
-  youtubeUrl: "https://youtu.be/uDWljP2PGmU",
-  leetCodeUrl: "",
-  articleUrl: "https://takeuforward.org/graph/dfs-traversal-in-graph/",
-  level: "Medium"
-}
+      // 🟦 Graph
+      {
+        chapter: "Graph",
+        title: "DFS Traversal",
+        description: "Graph depth-first traversal.",
+        youtubeUrl: "https://youtu.be/uDWljP2PGmU",
+        articleUrl: "https://takeuforward.org/graph/dfs-traversal-in-graph/",
+        level: "Medium"
+      }
+    ]);
 
-]);
     console.log("Sample problems add ho gya.");
   }
 };
