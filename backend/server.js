@@ -10,7 +10,6 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-// 🚀 Allow frontend (Render domain + Localhost)
 app.use(
   cors({
     origin: [
@@ -30,7 +29,6 @@ app.get("/", (req, res) => {
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/problems", require("./routes/problemRoutes"));
 
-// Seed sample data if DB empty
 const seedProblems = async () => {
   const count = await Problem.countDocuments();
   if (count === 0) {
@@ -55,7 +53,7 @@ const seedProblems = async () => {
         level: "Medium"
       },
 
-      // 🟦 Strings
+      // Strings
       {
         chapter: "Strings",
         title: "Longest Common Prefix",
@@ -75,7 +73,7 @@ const seedProblems = async () => {
         level: "Easy"
       },
 
-      // 🟦 Stack & Queue
+      // Stack & Queue
       {
         chapter: "Stack & Queue",
         title: "Valid Parenthesis",
@@ -95,7 +93,7 @@ const seedProblems = async () => {
         level: "Medium"
       },
 
-      // 🟦 Trees
+      // Trees
       {
         chapter: "Trees",
         title: "Binary Tree Level Order Traversal",
@@ -106,7 +104,7 @@ const seedProblems = async () => {
         level: "Easy"
       },
 
-      // 🟦 Graph
+      // Graph
       {
         chapter: "Graph",
         title: "DFS Traversal",

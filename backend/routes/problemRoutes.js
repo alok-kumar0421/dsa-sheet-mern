@@ -5,9 +5,6 @@ const protect = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-/* =======================
-   Get All Problems + User Progress
-======================= */
 router.get("/", protect, async (req, res) => {
   try {
     const problems = await Problem.find().sort({ chapter: 1 });
