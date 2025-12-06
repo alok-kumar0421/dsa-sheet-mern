@@ -2,9 +2,9 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #f7f9fc;
+  overflow: hidden;
 }
 
-/* Navbar */
 nav {
   background: white;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
@@ -26,7 +26,6 @@ nav button {
 }
 nav button:hover { background: #d93636; }
 
-/* Login Page*/
 .login-box {
   background: rgb(255, 255, 255);
   width: 350px;
@@ -42,7 +41,6 @@ nav button:hover { background: #d93636; }
   margin-bottom: 12px;
 }
 
-/* Dashboard */
 .main-container {
   max-width: 900px;
   margin: 30px auto;
@@ -52,7 +50,6 @@ nav button:hover { background: #d93636; }
   box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
 }
 
-/* Problem cards */
 .card {
   background: #ffffff;
   padding: 18px;
@@ -72,7 +69,6 @@ table { width: 100%; border-collapse: collapse; }
 
 .checkbox input { transform: scale(1.3); cursor:pointer; }
 
-/* Progress Section */
 .progress-container {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -86,7 +82,6 @@ table { width: 100%; border-collapse: collapse; }
   margin-bottom: 10px;
 }
 
-/* Custom Progress Bar */
 progress {
   width: 100%;
   height: 14px;
@@ -103,7 +98,6 @@ progress::-webkit-progress-value {
   border-radius: 10px;
 }
 
-/* Back Button */
 .back-btn {
   background: #1d3557;
   color: white;
@@ -124,7 +118,6 @@ progress::-webkit-progress-value {
   border-left: 5px solid #1d3557;
 }
 
-/* Chapter Title */
 .problem-card h2 {
   color: #1d3557;
   font-size: 22px;
@@ -132,14 +125,12 @@ progress::-webkit-progress-value {
   margin-bottom: 12px;
 }
 
-/* Table Head */
 .problem-table th {
   font-size: 15px;
   font-weight: bold;
   padding-bottom: 8px;
 }
 
-/* Table Rows */
 .problem-row {
   border-bottom: 1px solid #eee;
   padding: 12px 0;
@@ -169,7 +160,6 @@ progress::-webkit-progress-value {
   transform: translateY(-3px);
 }
 
-/* LOGIN CARD */
 .login-card {
   width: 360px;
   background: #ffffff;
@@ -186,9 +176,8 @@ progress::-webkit-progress-value {
   margin-bottom: 18px;
 }
 
-/* INPUTS */
 .login-input {
-  width: 100%;
+  width:92%;
   padding: 10px;
   margin-bottom: 14px;
   border-radius: 6px;
@@ -217,7 +206,6 @@ progress::-webkit-progress-value {
   background: #16324f;
 }
 
-/* Register link button */
 .register-btn {
   margin-top: 12px;
   width: 100%;
